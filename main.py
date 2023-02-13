@@ -18,9 +18,10 @@ report = f"{makerEersteGoal} scored in the {goal_0}nd minute" '\n' f"{makerTweed
 print(report)
 
 player = "Ronald Koeman"
-first_name = player[:6]
-last_name_len = len(player[7:])
-name_short = player[:1] + "." + player[6:]
+splitter = player.find(" ")
+first_name = player[:splitter]
+last_name_len = len(player[splitter + 1:])
+name_short = player[0] + "." + player[splitter:]
 chant = f"{first_name}! " * int(len(first_name)-1) + f"{first_name}!"
 good_chant = chant[-1] != " "
 
